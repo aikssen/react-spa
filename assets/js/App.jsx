@@ -1,6 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom'
-import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'react-router'
+import { render } from 'react-dom';
+import { Router, Route, IndexRoute, Link, IndexLink, useRouterHistory } from 'react-router';
+import { createHashHistory } from 'history'
 
 import { Layout } from './Layout';
 import { Home } from './components/Home';
@@ -10,14 +11,15 @@ import { User } from './components/User';
 import { NoMatch } from './components/NoMatch';
 
 
+const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
 
 const routes = (
-    <Router history={browserHistory}>
+    <Router history={appHistory}>
         <Route path="/" component={Layout}>
             <IndexRoute component={Home}/>
             <Route path="/about" component={About}/>
             <Route path="/users" component={Users}>
-                <Route path="/user/:id" component={User}/>
+                <Route path="/users/:id" component={User}/>
             </Route>
             <Route path="*" component={NoMatch}/>
         </Route>
