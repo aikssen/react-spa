@@ -6,7 +6,6 @@ export class User extends React.Component {
         return (
             <div>
                 <h2>{this.props.params.id}</h2>
-                {/* etc. */}
             </div>
         )
     }

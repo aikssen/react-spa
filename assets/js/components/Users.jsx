@@ -17,6 +17,11 @@ export class Users extends React.Component {
     };
 
 
+    static defaultProps = {  // -> getDefaultProps
+        hero: 'Batman'
+    };
+
+
     render() {
         return (
             <div>
@@ -30,7 +35,9 @@ export class Users extends React.Component {
                     </ul>
                 </div>
                 <div className="detail">
-                    {this.props.children}
+                    { this.props.children }
+                    { this.props.hero }
+
                 </div>
             </div>
         )
