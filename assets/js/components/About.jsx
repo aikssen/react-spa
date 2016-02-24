@@ -1,9 +1,9 @@
 import React from 'react';
 
-export class LeftDropZone extends React.Component {
+export class About extends React.Component {
     render() {
         return (
-            <section id="left-drop-zone">
+            <section>
                 <p>Left Drop Zone</p>
             </section>
         );

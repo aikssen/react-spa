@@ -5,11 +5,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: {
-        js: __dirname + '/assets/js/App.jsx',
-        css: __dirname + '/assets/styles/importer.scss'
+        js: './assets/js/App.jsx',
+        css: './assets/styles/importer.scss'
     },
     output: {
-        filename: __dirname + "./public/js/bundle.js"
+        filename: "./public/js/bundle.js"
     },
     devtool: 'source-map', //generate source-maps
     resolve: {
@@ -39,7 +39,7 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('./public/css/bundle.css', {
             allChunks: true
-        }),
+        })
         // # fro production
         //new webpack.optimize.UglifyJsPlugin({
         //    mangle: false,
